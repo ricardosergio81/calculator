@@ -1,12 +1,12 @@
 package br.com.ricardorosa.calculator.operations;
 
-public class Operation {
+public class Calculate {
 
     private Double result = 0.0;
     private Double inputValue;
     private String inputOperation = "";
 
-    public void inputValue(String inputValue){
+    public void input(String inputValue){
 
         if(inputValue.equals("+") || inputValue.equals("-") || inputValue.equals("*") || inputValue.equals("/")){
             this.inputOperation = inputValue;
@@ -26,26 +26,13 @@ public class Operation {
     }
 
     private void execute(){
-        if(inputOperation.equals("+")) {
-            this.result +=this.inputValue;
-        } else if(inputOperation.equals("-")) {
-             this.result -= this.inputValue;
-        } else if(inputOperation.equals("*")) {
-             this.result *= this.inputValue;
-        } else if(inputOperation.equals("/")) {
-             this.result /= this.inputValue;
-        }
-
+        Method method = MethodsEnum.returnMethod(inputOperation);
+        this.result= method.execute(this.result,this.inputValue);
     }
 
     public Double getResult(){
         return this.result;
     }
 
-    @Override
-    public String toString() {
-        return "Operation{" +
-                "result=" + result +
-                '}';
-    }
+
 }

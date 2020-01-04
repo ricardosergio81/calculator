@@ -4,7 +4,7 @@ import br.com.ricardorosa.calculator.operations.OperationString;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestOperationString {
+public class TestCalculateString {
     @Test
     public void OnePlusTwoEqualTwoTest(){
         OperationString operation = new OperationString();

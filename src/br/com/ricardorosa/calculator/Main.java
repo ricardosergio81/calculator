@@ -1,17 +1,17 @@
 package br.com.ricardorosa.calculator;
 
-import br.com.ricardorosa.calculator.operations.Operation;
+import br.com.ricardorosa.calculator.operations.Calculate;
 
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
         String inputValue = ""; ;
-        Operation calc = new Operation();
+        Calculate calc = new Calculate();
 
         System.out.println("Input a valid number \n Or + - * / \n Or x to Exit");
 
@@ -21,7 +21,7 @@ public class main {
             inputValue = scanner.next();
 
             if(!inputValue.equals("x")) {
-                calc.inputValue(inputValue);
+                calc.input(inputValue);
                 System.out.println("Result: " + calc.getResult() + "\n");
             }
         }

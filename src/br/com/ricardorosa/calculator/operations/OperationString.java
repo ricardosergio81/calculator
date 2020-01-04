@@ -2,7 +2,7 @@ package br.com.ricardorosa.calculator.operations;
 
 public class OperationString {
 
-    Operation operation = new Operation();
+    Calculate operation = new Calculate();
 
     public void inputString(String inputValue) {
         Integer i =0 ;
@@ -13,10 +13,10 @@ public class OperationString {
 
             if(inputPart == '+' || inputPart == '-' || inputPart == '*' || inputPart == '/') {
                 if(!input.equals("")){
-                    operation.inputValue(input);
+                    operation.input(input);
                     input = "";
                 }
-                operation.inputValue(inputPart.toString());
+                operation.input(inputPart.toString());
             } else {
                 input = new StringBuilder().append(input).append(inputPart).toString();
             }
@@ -24,7 +24,7 @@ public class OperationString {
         }
 
         if(!input.equals("")){
-            operation.inputValue(input);
+            operation.input(input);
         }
     }
 

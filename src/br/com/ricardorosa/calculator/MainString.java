@@ -4,7 +4,7 @@ import br.com.ricardorosa.calculator.operations.OperationString;
 
 import java.util.Scanner;
 
-public class mainString {
+public class MainString {
 
     public static void main(String[] args) {
 
