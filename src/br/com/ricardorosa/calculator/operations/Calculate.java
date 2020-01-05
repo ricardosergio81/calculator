@@ -8,16 +8,16 @@ public class Calculate {
 
     public void input(String inputValue){
 
-        if(inputValue.equals("+") || inputValue.equals("-") || inputValue.equals("*") || inputValue.equals("/")){
+        if( MethodsEnum.contains(inputValue)) {
             this.inputOperation = inputValue;
-        } else{
+        } else {
             try {
                 this.inputValue = Double.valueOf(inputValue);
                 if( this.inputOperation.equals("") ){
                     this.result = this.inputValue;
                 } else {
                     this.execute();
-                    this.inputOperation ="";
+                    this.inputOperation = "";
                 }
             } catch (NumberFormatException e){
                 System.out.println("Invalid Value");
@@ -27,7 +27,7 @@ public class Calculate {
 
     private void execute(){
         Method method = MethodsEnum.returnMethod(inputOperation);
-        this.result= method.execute(this.result,this.inputValue);
+        this.result = method.execute(this.result,this.inputValue);
     }
 
     public Double getResult(){

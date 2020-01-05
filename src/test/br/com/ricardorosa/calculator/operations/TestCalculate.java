@@ -27,6 +27,47 @@ public class TestCalculate {
         Assert.assertEquals(2.0, operation.getResult(),0.0);
     }
 
+    @Test
+    public void OneDivisionOneEqualOneTest(){
+        Calculate operation = new Calculate();
+
+        operation.input("1");
+        operation.input("/");
+        operation.input("1");
+
+        Assert.assertEquals(1.0, operation.getResult(),0.0);
+    }
+
+    @Test
+    public void OneSubtactOneEqualZeroTest(){
+        Calculate operation = new Calculate();
+
+        operation.input("1");
+        operation.input("-");
+        operation.input("1");
+
+        Assert.assertEquals(0.0, operation.getResult(),0.0);
+    }
+
+    @Test
+    public void OneMultiplicatedOneEqualOneTest(){
+        Calculate operation = new Calculate();
+
+        operation.input("1");
+        operation.input("*");
+        operation.input("1");
+
+        Assert.assertEquals(1.0, operation.getResult(),0.0);
+    }
+
+    @Test
+    public void InvalidValueTest(){
+        Calculate operation = new Calculate();
+
+        operation.input("a");
+
+        Assert.assertEquals("Invalid Value", operation.getResult());
+    }
 
     @Test
     public void OneMultipleOperationPlusOneTest(){
