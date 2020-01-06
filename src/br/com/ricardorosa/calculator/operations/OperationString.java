@@ -12,11 +12,15 @@ public class OperationString {
             inputPart = inputValue.charAt(i);
 
             if(inputPart == '+' || inputPart == '-' || inputPart == '*' || inputPart == '/') {
+                try {
                 if(!input.equals("")){
-                    operation.input(input);
+                        operation.input(input);
                     input = "";
                 }
                 operation.input(inputPart.toString());
+                } catch (NumberFormatException e){
+                    System.out.println("Invalid Value");
+                }
             } else {
                 input = new StringBuilder().append(input).append(inputPart).toString();
             }

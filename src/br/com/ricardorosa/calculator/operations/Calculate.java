@@ -6,12 +6,11 @@ public class Calculate {
     private Double inputValue;
     private String inputOperation = "";
 
-    public void input(String inputValue){
+    public void input(String inputValue) throws NumberFormatException {
 
         if( MethodsEnum.contains(inputValue)) {
             this.inputOperation = inputValue;
         } else {
-            try {
                 this.inputValue = Double.valueOf(inputValue);
                 if( this.inputOperation.equals("") ){
                     this.result = this.inputValue;
@@ -19,9 +18,6 @@ public class Calculate {
                     this.execute();
                     this.inputOperation = "";
                 }
-            } catch (NumberFormatException e){
-                System.out.println("Invalid Value");
-            }
         }
     }
 

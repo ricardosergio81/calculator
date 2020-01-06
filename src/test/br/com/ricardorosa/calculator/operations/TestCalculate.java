@@ -63,10 +63,7 @@ public class TestCalculate {
     @Test
     public void InvalidValueTest(){
         Calculate operation = new Calculate();
-
-        operation.input("a");
-
-        Assert.assertEquals("Invalid Value", operation.getResult());
+        Assert.assertThrows(NumberFormatException.class,()->operation.input("a"));
     }
 
     @Test
