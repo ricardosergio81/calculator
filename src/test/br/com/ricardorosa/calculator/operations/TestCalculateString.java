@@ -1,22 +1,22 @@
 package test.br.com.ricardorosa.calculator.operations;
 
-import br.com.ricardorosa.calculator.operations.OperationString;
+import br.com.ricardorosa.calculator.operations.Calculate;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TestCalculateString {
     @Test
     public void OnePlusTwoEqualTwoTest(){
-        OperationString operation = new OperationString();
-        operation.inputString("1+2");
+        Calculate operation = new Calculate();
+        operation.input("1+2");
         Assert.assertNotEquals(2.0, operation.getResult(),0.0);
     }
 
     @Test
     public void OnePlusOneEqualTwoTest(){
-        OperationString operation = new OperationString();
+        Calculate operation = new Calculate();
 
-        operation.inputString("1+1");
+        operation.input("1+1");
 
         Assert.assertEquals(2.0, operation.getResult(),0.0);
     }
@@ -24,9 +24,9 @@ public class TestCalculateString {
 
     @Test
     public void OneMultipleOperationPlusOneTest(){
-        OperationString operation = new OperationString();
+        Calculate operation = new Calculate();
 
-        operation.inputString("1+-*/+1");
+        operation.input("1+-*/+1");
         Assert.assertEquals(2.0, operation.getResult(),0.0);
     }
 

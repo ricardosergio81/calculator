@@ -13,7 +13,7 @@ public class Main {
         String inputValue = ""; ;
         Calculate calc = new Calculate();
 
-        System.out.println("Input a valid number \n Or + - * / \n Or x to Exit");
+        System.out.println("Input a valid number \n Or + - * / \n Or string like 1+1-10  \n Or x to Exit");
 
         while (!inputValue.equals("x")){
 
