@@ -9,8 +9,8 @@ public class Calculate {
     private String inputOperation = "";
 
     public void input(String inputValue) throws NumberFormatException {
-        Pattern digitPattern = Pattern.compile("((\\d)|([\\+\\-\\*\\/]{1}))");
-        Pattern digitOperationPattern = Pattern.compile("[\\d\\-\\+\\*\\/]+");
+        Pattern digitPattern = Pattern.compile("((\\d+[\\.]{0,1}\\d*)|([\\+\\-\\*\\/]{1}))");
+        Pattern digitOperationPattern = Pattern.compile("[(\\d+[\\.]{0,1}\\d*)\\-\\+\\*\\/]+");
 
         if(digitPattern.matcher(inputValue).matches()) {
             this.inputValue(inputValue);
@@ -23,8 +23,8 @@ public class Calculate {
     }
 
      private void inputValue(String inputValue)  throws NumberFormatException{
-         System.out.println(inputValue);
          if( MethodsEnum.contains(inputValue)) {
+             System.out.println(inputValue);
              this.inputOperation = inputValue;
          } else {
              this.inputValue = Double.valueOf(inputValue);
@@ -38,13 +38,12 @@ public class Calculate {
      }
 
     private void inputString(String inputValue)  throws NumberFormatException {
-        Integer i =0 ;
+        Integer i = 0 ;
         Character inputPart ;
         StringBuilder input = new StringBuilder();
 
         while( i < inputValue.length() ) {
             inputPart = inputValue.charAt(i);
-            System.out.println(inputPart);
             if( MethodsEnum.contains(inputPart.toString())) {
                  if(!input.equals("")){
                     this.inputValue(input.toString());

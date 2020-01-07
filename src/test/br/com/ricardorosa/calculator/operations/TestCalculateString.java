@@ -21,6 +21,15 @@ public class TestCalculateString {
         Assert.assertEquals(2.0, operation.getResult(),0.0);
     }
 
+    @Test
+    public void DoubleInputValueTest(){
+        Calculate operation = new Calculate();
+
+        operation.input("1.0+1.0");
+
+        Assert.assertEquals(2.0, operation.getResult(),0.0);
+    }
+
 
     @Test
     public void OneMultipleOperationPlusOneTest(){

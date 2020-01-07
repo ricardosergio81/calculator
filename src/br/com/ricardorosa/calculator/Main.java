@@ -21,8 +21,12 @@ public class Main {
             inputValue = scanner.next();
 
             if(!inputValue.equals("x")) {
-                calc.input(inputValue);
-                System.out.println("Result: " + calc.getResult() + "\n");
+                try {
+                    calc.input(inputValue);
+                    System.out.println("Result: " + calc.getResult() + "\n");
+                } catch (NumberFormatException e){
+                    System.out.println("Invalid input value. Try again!");
+                }
             }
         }
 

@@ -59,6 +59,16 @@ public class TestCalculate {
 
         Assert.assertEquals(1.0, operation.getResult(),0.0);
     }
+    @Test
+    public void DoubleTwoMultiplicatedTwoEqualFourTest(){
+        Calculate operation = new Calculate();
+
+        operation.input("2.0");
+        operation.input("*");
+        operation.input("2.0");
+
+        Assert.assertEquals(4.0, operation.getResult(),0.0);
+    }
 
     @Test
     public void InvalidValueTest(){
